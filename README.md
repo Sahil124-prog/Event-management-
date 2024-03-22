@@ -11,5 +11,12 @@ It provide features for managing session details, including speaker bios, sessio
 It facilitate attendee engagement and networking through features such as attendee directories, chat rooms, discussion forums, and virtual meeting rooms.
 It enable attendees to connect with speakers, sponsors, exhibitors, and fellow participants before, during, and after the event.
 It also collect feedback from attendees through surveys, polls, and evaluations to assess event satisfaction, gather suggestions for improvement, and measure event success.
-Last, but not least It generate post-event reports and analytics to analyze attendee feedback, track key performance indicators (KPIs), and evaluate event ROI.
+# Motive behind the website.
+Are planning to make a website which helps people to save from the scam's which are prevailing in the market in the name of managing the events. by asking them for a reasonable amount of money and gving every past records of our organizers.
+# Workplan
+first make a login page 
+then event creation website, where we have registration page for the payements,registration and promotions 
+the feedback session for a user-friendly experience.
+
+
 
