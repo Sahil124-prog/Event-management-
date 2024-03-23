@@ -1,0 +1,322 @@
+# Payment.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose Payment Method</h1>
+    <div class="payment-options">
+        <div class="payment-option" id="paytm">
+            <img src="https://logowik.com/content/uploads/images/paytm8487.jpg" alt="Paytm Logo">
+            <button onclick="payWithPaytm()">Pay with Paytm</button>
+        </div>
+        <div class="payment-option" id="paypal">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTsT9VojMYDl1a35sEilgC3W64KiQfj5cKBrEuobZD6w&s" alt="PayPal Logo">
+            <button onclick="payWithPayPal()">Pay with PayPal</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function payWithPaytm() {
+        // Code to initiate payment with Paytm
+        alert("Redirecting to Paytm Payment Gateway...");
+    }
+
+    function payWithPayPal() {
+        // Code to initiate payment with PayPal
+        alert("Redirecting to PayPal Payment Gateway...");
+    }
+</script>
+
+</body>
+</html>
+#Contact.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Page</title>
+<style>
+/* CSS styles for Agenda Planning */
+#agenda {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.agenda-title {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.select-venue-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.select-venue-btn:hover {
+    background-color: #0056b3;
+}
+
+/* CSS styles for Venue Selection */
+#venue {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.venue-title {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.select-venue-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.select-venue-btn:hover {
+    background-color: #0056b3;
+}
+
+/* CSS styles for Contact Us */
+#contact {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.contact-title {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.success-message {
+    color: #4CAF50;
+    font-size: 20px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<section id="agenda">
+    <h2 class="agenda-title">Agenda Planning</h2>
+    <button id="showAgendaBtn" class="select-venue-btn">View Agenda</button>
+    <div id="agendaDetails" class="hidden">
+        <p>This section will allow organizers to create event agendas with multiple sessions, workshops, panels, and networking opportunities.</p>
+        <ul id="agendaList"></ul>
+    </div>
+</section>
+
+<section id="venue">
+    <h2 class="venue-title">Venue Selection</h2>
+    <a href="other-site.html" id="selectVenueBtn" class="select-venue-btn">Select Your Venue</a>
+</section>
+
+<section id="contact">
+    <h2 class="contact-title">Contact Us</h2>
+    <form id="contactForm" class="contact-form">
+        <label for="contactName">Name:</label>
+        <input type="text" id="contactName" required>
+        <label for="contactEmail">Email:</label>
+        <input type="email" id="contactEmail" required>
+        <label for="contactMessage">Message:</label>
+        <textarea id="contactMessage" required></textarea>
+        <button type="button" id="submitButton" class="submit-button">Send</button>
+    </form>
+    <div id="successMessage" class="hidden success-message">Message sent successfully!</div>
+</section>
+
+<script>
+const agendaItems = [
+    "Keynote Speech",
+    "Breakout Sessions",
+    "Workshops",
+    "Panel Discussions",
+    "Networking Opportunities"
+];
+
+function generateAgendaList() {
+    const agendaList = document.getElementById("agendaList");
+    agendaItems.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        agendaList.appendChild(listItem);
+    });
+}
+
+document.getElementById("showAgendaBtn").addEventListener("click", function() {
+    const agendaDetails = document.getElementById("agendaDetails");
+    agendaDetails.classList.toggle("hidden");
+});
+
+
+document.getElementById("submitButton").addEventListener("click", function() {
+    setTimeout(function() {
+        document.getElementById("contactForm").reset();
+        document.getElementById("successMessage").classList.remove("hidden");
+    }, 1000); 
+});
+generateAgendaList();
+</script>
+
+</body>
+</html>
+#login.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            background-size: cover;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: floatUp 2s forwards; /* Animation for login container */
+            opacity: 0; /* Initially hide the login container */
+        }
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="https://www.shutterstock.com/shutterstock/videos/1104469527/preview/stock-footage-orange-k-creative-neon-arrows-design-texture-pattern-abstract-wallpaper-live-performance-concert.webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="login-container">
+        <h2>Login / Signup</h2>
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        // Show the login container after the video loads
+        document.getElementById('video-background').addEventListener('loadedmetadata', function() {
+            document.querySelector('.login-container').style.opacity = 1;
+        });
+    </script>
+</body>
+</html>
