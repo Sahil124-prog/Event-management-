@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Website</title>
+    <link rel="stylesheet" href="hack.css">
+</head>
+<body>
+    <div class="hero">
+        <img src="https://thumbs.dreamstime.com/z/smiling-people-celebrating-new-year-party-happy-have-fun-indoor-young-woman-dress-man-suit-exited-hands-up-128514894.jpg">
+    </div>
+    <nav id="navigation" class="col-full">
+        <h1>Event Hub</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="payment.html">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" target="_blank">Login/Signup</a></li>
+            <li><a href="contact.html" target="_blank">Contact Us</a></li>
+        </ul>
+        
+    </nav>
+
+
+    <header id="home">
+        <div>
+            <h1>Create Unforgettable Events</h1>
+            <h3>Plan, promote, and execute successful events with ease.</h3>
+            <button onclick="location.href='#venue'" target="_blank">Browse Events</button>
+        </div>
+    </header>
+    <div class="container">
+    <img src="https://i.pinimg.com/736x/05/68/c4/0568c426e0d964e7c324ba64ffd98100.jpg" alt="images" class="center">
+    <div class="content">
+        <h1>Events Hub</h1>
+        <p>The place where you want your choices to be  fulfilled in a accessible way.
+        </p>
+    </div>
+    </div>
+    <section id="agenda">
+        <h2 class="agenda-title">Agenda Planning</h2>
+        <button id="showAgendaBtn">View Agenda</button>
+        <div id="agendaDetails" class="hidden">
+            <p>This section will allow organizers to create event agendas with multiple sessions, workshops, panels, and networking opportunities.</p>
+            <ul id="agendaList"></ul>
+            <script>
+                // Sample agenda items
+const agendaItems = [
+"Keynote Speech",
+"Breakout Sessions",
+"Workshops",
+"Panel Discussions",
+"Networking Opportunities"
+];
+
+// Function to generate agenda list
+function generateAgendaList() {
+const agendaList = document.getElementById("agendaList");
+agendaItems.forEach(item => {
+    const listItem = document.createElement("li");
+    listItem.textContent = item;
+    agendaList.appendChild(listItem);
+});
+}
+
+document.getElementById("showAgendaBtn").addEventListener("click", function() {
+const agendaDetails = document.getElementById("agendaDetails");
+agendaDetails.classList.toggle("hidden");
+});
+generateAgendaList();
+
+            </script>
+        </div>
+    </section>
+    <section id="venue">
+        <h2 class="venue-title">Venue Selection</h2>
+        <a href="other-site.html" id="select-venue" class="select-venue-btn">Select Your Venue</a>
+    </section>
+    
+
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <div class="pricing-table" id="pricing-details">
+            <script src="xo.js"></script>
+        </div>
+    </section>
+    <section>
+    <div>
+        <a href="payment.html" target="_blank">Payement needs to be done here </a>
+    </div>
+    </section>   
+    <footer id="help">
+        <div>
+            <h3>EventHub</h3>
+            <p>&copy; 2024 All rights reserved</p>
+        </div>
+        <div>
+            <p>Made by Sahil,Chetan,Tushar,Rahul,Nirbhay</p>
+            <a  id="oe" href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+    <script src="hack1.jss"></script>
+    </body>
+    </html>
